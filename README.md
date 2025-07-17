@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-    <a href="">
+    <a href="https://github.com/GATECH-EIC/LaCache/blob/main/assets/LaCache.pdf">
         <img alt="Paper" src="https://img.shields.io/badge/paper-link-blue?logo=quicklook" />
     </a>
     <a href="">
