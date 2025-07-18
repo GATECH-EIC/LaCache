@@ -11,4 +11,9 @@
     </a><br>
 </p>
 
-### Coming today
+## on PPL
+
+### Installation
+
+> [!NOTE]
+> [transformers](https://github.com/huggingface/transformers) had made a major change on kv cache implementation since version 4.36.0. Please use [ppl_legacy](./ppl_legacy) if you are using transformers < 4.36.0.
