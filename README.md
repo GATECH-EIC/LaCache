@@ -17,3 +17,19 @@
 
 > [!NOTE]
 > [transformers](https://github.com/huggingface/transformers) had made a major change on kv cache implementation since version 4.36.0. Please use [ppl_legacy](./ppl_legacy) if you are using transformers < 4.36.0.
+
+```bash
+# transformers < 4.36.0
+cd ppl_legacy
+conda create -n ppl_legacy python=3.8.20
+conda activate ppl_legacy
+pip install torch==2.4.1 transformers==4.33.0
+conda env update --file environment.yml
+
+# transformers >= 4.36.0
+cd ppl
+conda create -n ppl python=3.8.20
+conda activate ppl
+pip install torch==2.4.1 transformers==4.36.2
+conda env update --file environment.yml
+```
