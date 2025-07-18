@@ -11,7 +11,7 @@
     </a><br>
 </p>
 
-## on PPL
+## On PPL
 
 ### ⚙️ Installation
 
@@ -37,33 +37,33 @@ conda env update --file environment.yml
 ### 📑 Evaluation
 
 ```bash
-export HF_TOKEN="YOU_HUGGINGFACE_KEY"
+export HF_TOKEN="YOUR_HUGGINGFACE_KEY"
 
-# Evaulated on wikitext2 dataset
+# Evaluated on wikitext2 dataset
 python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --enable_lacache \
     --cache_size 256 --span 16 --overlap 0 --num_eval_tokens 1024
 
-# Evaulated on a different model
+# Evaluated on a different model
 python -u run.py --model_name_or_path meta-llama/Llama-2-7b-chat-hf --enable_lacache \
     --cache_size 256 --span 16 --overlap 0 --num_eval_tokens 1024
 
-# Evaulated with a different generation length
+# Evaluated with a different generation length
 python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --enable_lacache \
     --cache_size 256 --span 16 --overlap 0 --num_eval_tokens 8192
 
-# Evaulated with a different cache size
+# Evaluated with a different cache size
 python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --enable_lacache \
     --cache_size 512 --span 16 --overlap 0 --num_eval_tokens 1024
 
-# Evaulated with different ladder hyperparameters
+# Evaluated with different ladder hyperparameters
 python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --enable_lacache \
     --cache_size 256 --span 8 --overlap 4 --num_eval_tokens 1024
 
-# Evaulated on pg19 dataset
+# Evaluated on pg19 dataset
 python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --dataset_name emozilla/pg19-test --task default \
     --split test --enable_lacache --cache_size 256 --span 16 --overlap 0 --num_eval_tokens 1024
 
-# Evaulated without LaCache
+# Evaluated without LaCache
 python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --num_eval_tokens 1024
 ```
 
@@ -71,7 +71,7 @@ python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --num_eval_toke
 * To evaluate with flash-attention, please specify `attn_implementation="flash_attention_2" (see the load function in [ppl/run.py](./ppl/run.py))
 
 ## 💬 Acknowledgments
-This code is built upon <a href="https://github.com/huggingface/transformers">transformers</a> and <a href="https://github.com/mit-han-lab/streaming-llm">streaming-llm</a>. Thanks for these awesome open-source projects!
+This code is built upon <a href="https://github.com/huggingface/transformers">transformers</a> and <a href="https://github.com/mit-han-lab/streaming-llm">streaming-llm</a>. We thank the contributors of these open-source projects.
 
 ## ✨ Citation
 ```bibtex
