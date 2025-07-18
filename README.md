@@ -30,7 +30,7 @@ conda env update --file environment.yml
 cd ppl
 conda create -n ppl python=3.8.20
 conda activate ppl
-pip install torch==2.4.1 transformers==4.36.2
+pip install torch==2.4.1 transformers==4.43.4
 conda env update --file environment.yml
 ```
 
