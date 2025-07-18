@@ -1,0 +1,13 @@
+__pycache__/
+.history/
+log/
+pretrained
+checkpoint
+annotation
+datasets
+output
+*.sh
+!scripts/*.sh
+srun*
+tmp*
+output*
