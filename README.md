@@ -68,7 +68,7 @@ python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --num_eval_toke
 ```
 
 * To evaluate newer models such as Llama-3.1 and Llama-3.2, please use [ppl](./ppl) instead of [ppl_legacy](./ppl_legacy)
-* To evaluate with flash-attention, please specify `attn_implementation="flash_attention_2" (see the load function in [ppl/run.py](./ppl/run.py))
+* To evaluate with flash-attention, please specify `attn_implementation="flash_attention_2"` (see the load function in [ppl/run.py](./ppl/run.py))
 
 ## 💬 Acknowledgments
 This code is built upon <a href="https://github.com/huggingface/transformers">transformers</a> and <a href="https://github.com/mit-han-lab/streaming-llm">streaming-llm</a>. We thank the contributors of these open-source projects.
