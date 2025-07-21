@@ -35,6 +35,7 @@ conda env update --file environment_legacy.yml
 ### 📑 Evaluation
 
 ```bash
+# Examples on how to use
 export HF_TOKEN="YOUR_HUGGINGFACE_KEY"
 
 # Evaluated on wikitext2 dataset
@@ -68,8 +69,38 @@ python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --num_eval_toke
 * To evaluate newer models such as Llama-3.1 and Llama-3.2, please use [ppl](./ppl) instead of [ppl_legacy](./ppl_legacy)
 * To evaluate with flash-attention, please specify `attn_implementation="flash_attention_2"` (see the load function in [ppl/run.py](./ppl/run.py))
 
+
+## On LongBench
+
+### 📑 Evaluation
+
+```bash
+# Examples on how to use
+export HF_TOKEN="YOUR_HUGGINGFACE_KEY"
+
+# Evaluated on meta-llama/Llama-2-7b-chat-hf
+CUDA_VISIBLE_DEVICES=0 python pred.py --model meta-llama/Llama-2-7b-chat-hf --method lacache --budget 0.5 --span 16 --overlap 0
+python eval.py --model meta-llama/Llama-2-7b-chat-hf --method lacache --budget 0.5
+
+# Evaluated with a different cache budget and ladder hyperparameters
+CUDA_VISIBLE_DEVICES=0 python pred.py --model meta-llama/Llama-2-7b-chat-hf --method lacache --budget 0.25 --span 9 --overlap 3
+python eval.py --model meta-llama/Llama-2-7b-chat-hf --method lacache --budget 0.25
+
+# Evaluated on a different model
+CUDA_VISIBLE_DEVICES=0 python pred.py --model HuggingFaceTB/SmolLM2-1.7B-Instruct --method lacache --budget 0.5 --span 9 --overlap 7
+python eval.py --model HuggingFaceTB/SmolLM2-1.7B-Instruct --method lacache --budget 0.5
+
+CUDA_VISIBLE_DEVICES=0 python pred.py --model HuggingFaceTB/SmolLM2-1.7B-Instruct --method lacache --budget 0.25 --span 9 --overlap 7
+python eval.py --model HuggingFaceTB/SmolLM2-1.7B-Instruct --method lacache --budget 0.25
+
+# Evaluated without LaCache
+CUDA_VISIBLE_DEVICES=0 python pred.py --model meta-llama/Llama-2-7b-chat-hf
+python eval.py --model meta-llama/Llama-2-7b-chat-hf
+```
+
+
 ## 💬 Acknowledgments
-This code is built upon <a href="https://github.com/huggingface/transformers">transformers</a> and <a href="https://github.com/mit-han-lab/streaming-llm">streaming-llm</a>. We thank the contributors of these open-source projects.
+This code is built upon <a href="https://github.com/huggingface/transformers">transformers</a>, <a href="https://github.com/THUDM/LongBench">LongBench</a>, and <a href="https://github.com/mit-han-lab/streaming-llm">streaming-llm</a>. We thank the contributors of these open-source projects.
 
 ## ✨ Citation
 ```bibtex
