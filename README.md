@@ -9,6 +9,7 @@
     <a href="">
         <img alt="ArXiv" src="https://img.shields.io/badge/arXiv-xxxx.xxxxx-B31B1B?logo=arxiv" />
     </a><br>
+    On <a href="#on-perplexity"> Perplexity</a> | On <a href="#on-longbench">LongBench</a>
 </p>
 
 ## ⚙️ Installation
@@ -30,7 +31,7 @@ pip install torch==2.4.1 transformers==4.33.0
 conda env update --file environment_legacy.yml
 ```
 
-## On PPL
+## On Perplexity
 
 ### 📑 Evaluation
 
