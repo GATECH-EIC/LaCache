@@ -1,4 +1,4 @@
-name: ppl
+name: lacache_legacy
 channels:
   - defaults
 dependencies:
@@ -10,21 +10,15 @@ dependencies:
   - libgcc-ng=11.2.0=h1234567_1
   - libgomp=11.2.0=h1234567_1
   - libstdcxx-ng=11.2.0=h1234567_1
-  - libxcb=1.17.0=h9b100fa_0
   - ncurses=6.4=h6a678d5_0
   - openssl=3.0.15=h5eee18b_0
   - pip=24.2=py38h06a4308_0
-  - pthread-stubs=0.3=h0ce48e5_1
   - python=3.8.20=he870216_0
   - readline=8.2=h5eee18b_0
   - setuptools=75.1.0=py38h06a4308_0
   - sqlite=3.45.3=h5eee18b_0
   - tk=8.6.14=h39e8969_0
   - wheel=0.44.0=py38h06a4308_0
-  - xorg-libx11=1.8.12=h9b100fa_1
-  - xorg-libxau=1.0.12=h9b100fa_0
-  - xorg-libxdmcp=1.1.5=h9b100fa_0
-  - xorg-xorgproto=2024.1=h5eee18b_1
   - xz=5.4.6=h5eee18b_1
   - zlib=1.2.13=h5eee18b_1
   - pip:
@@ -59,7 +53,6 @@ dependencies:
       - gitdb==4.0.11
       - gitpython==3.1.43
       - h11==0.14.0
-      - hf-xet==1.1.5
       - httpcore==1.0.7
       - httpx==0.28.1
       - huggingface-hub==0.26.5
@@ -129,12 +122,12 @@ dependencies:
       - sympy==1.13.3
       - threadpoolctl==3.5.0
       - tiktoken==0.7.0
-      - tokenizers==0.19.1
+      - tokenizers==0.13.3
       - torch==2.4.1
       - torchaudio==2.4.1
       - torchvision==0.19.1
       - tqdm==4.67.1
-      - transformers==4.43.4
+      - transformers==4.33.0
       - triton==3.0.0
       - typing-extensions==4.12.2
       - tzdata==2024.2

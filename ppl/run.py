@@ -63,7 +63,7 @@ def main(args):
     num_eval_tokens = 0
     pbar = tqdm(range(0, args.num_eval_tokens + 1))
     nlls = []
-    past_key_values, cache_position, position_ids = DynamicCache(), None, None
+    past_key_values, cache_position = DynamicCache(), None
 
     for idx in pbar:
         input_ids = encodings.input_ids[:, idx : idx + 1].to(device)
