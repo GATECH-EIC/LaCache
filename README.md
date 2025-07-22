@@ -3,11 +3,11 @@
 </div>
 
 <p align="center">
-    <a href="https://github.com/GATECH-EIC/LaCache/blob/main/assets/LaCache.pdf">
+    <a href="https://arxiv.org/pdf/2507.14204">
         <img alt="Paper" src="https://img.shields.io/badge/paper-link-blue?logo=quicklook" />
     </a>
-    <a href="">
-        <img alt="ArXiv" src="https://img.shields.io/badge/arXiv-xxxx.xxxxx-B31B1B?logo=arxiv" />
+    <a href="https://arxiv.org/abs/2507.14204">
+        <img alt="ArXiv" src="https://img.shields.io/badge/arXiv-2507.14204-B31B1B?logo=arxiv" />
     </a><br>
     On <a href="#on-perplexity"> Perplexity</a> | On <a href="#on-longbench">LongBench</a>
 </p>
