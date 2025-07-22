@@ -9,7 +9,7 @@
     <a href="https://arxiv.org/abs/2507.14204">
         <img alt="ArXiv" src="https://img.shields.io/badge/arXiv-2507.14204-B31B1B?logo=arxiv" />
     </a><br>
-    On <a href="#on-perplexity"> Perplexity</a> | On <a href="#on-longbench">LongBench</a>
+    On <a href="#on-perplexity"> Perplexity</a> (Wikitext2/PG19) | On <a href="#on-longbench">LongBench</a> | On <a href="#on-needle-in-a-haystack">Needle-In-A-Haystack</a>
 </p>
 
 ## ⚙️ Installation
@@ -99,9 +99,37 @@ CUDA_VISIBLE_DEVICES=0 python pred.py --model meta-llama/Llama-2-7b-chat-hf
 python eval.py --model meta-llama/Llama-2-7b-chat-hf
 ```
 
+## On Needle-In-A-Haystack
+
+### 📑 Evaluation
+
+```bash
+# Examples on how to use
+export HF_TOKEN="YOUR_HUGGINGFACE_KEY"
+
+# Evaluated with a context lenght of 128*1024=131072
+python pred.py --model_name meta-llama/Llama-3.2-3B-Instruct --max_tokens 131072 --interval 16384 --num_tests 50 --enable_lacache \
+    --span 14 --overlap 0 --budget 0.5
+
+# Evaluated with different maximum context length and evaluation interval 
+python pred.py --model_name meta-llama/Llama-3.2-3B-Instruct --max_tokens 65536 --interval 32768 --num_tests 50 --enable_lacache \
+    --span 14 --overlap 0 --budget 0.5
+
+# Evaluated with different number of tests
+python pred.py --model_name meta-llama/Llama-3.2-3B-Instruct --max_tokens 131072 --interval 16384 --num_tests 100 --enable_lacache \
+    --span 14 --overlap 0 --budget 0.5
+
+# Evaluated without LaCache
+python pred.py --model_name meta-llama/Llama-3.2-3B-Instruct --max_tokens 131072 --interval 16384 --num_tests 50
+```
+
+* Only support `transformers >= 4.36.0` currently, i.e., no legacy version.
+* Decrease `--max_tokens` if gpu memory is insufficent.
+
+
 
 ## 💬 Acknowledgments
-This code is built upon <a href="https://github.com/huggingface/transformers">transformers</a>, <a href="https://github.com/THUDM/LongBench">LongBench</a>, and <a href="https://github.com/mit-han-lab/streaming-llm">streaming-llm</a>. We thank the contributors of these open-source projects.
+This code is built upon <a href="https://github.com/huggingface/transformers">transformers</a>, <a href="https://github.com/THUDM/LongBench">LongBench</a>, <a href="https://github.com/mit-han-lab/streaming-llm">streaming-llm</a>, and <a href="https://github.com/jzhang38/LongMamba">LongMamba</a>. We thank the contributors of these open-source projects.
 
 ## ✨ Citation
 ```bibtex
