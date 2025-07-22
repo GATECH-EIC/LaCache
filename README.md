@@ -15,7 +15,7 @@
 ## ⚙️ Installation
 
 > [!NOTE]
-> [transformers](https://github.com/huggingface/transformers) had made a major change on kv cache implementation since version 4.36.0. Please use [ppl_legacy](./ppl_legacy) if you are using transformers < 4.36.0.
+> [transformers](https://github.com/huggingface/transformers) had made a major change on kv cache implementation since version 4.36.0. Please use [ppl_legacy](./ppl_legacy) if you are using transformers < 4.36.0
 
 ```bash
 # if you are using transformers >= 4.36.0
@@ -33,6 +33,8 @@ conda env update --file environment_legacy.yml
 
 ## On Perplexity
 
+* `cd ppl/` for the normal version or `cd ppl_legacy/` for the legacy version
+  
 ### 📑 Evaluation
 
 ```bash
@@ -67,11 +69,13 @@ python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --dataset_name 
 python -u run.py --model_name_or_path meta-llama/Meta-Llama-3-8B --num_eval_tokens 1024
 ```
 
-* To evaluate newer models such as Llama-3.1 and Llama-3.2, please use [ppl](./ppl) instead of [ppl_legacy](./ppl_legacy)
+* To evaluate on newer models such as Llama-3.1 and Llama-3.2, please use [ppl](./ppl) instead of [ppl_legacy](./ppl_legacy)
 * To evaluate with flash-attention, please specify `attn_implementation="flash_attention_2"` (see the load function in [ppl/run.py](./ppl/run.py))
 
 
 ## On LongBench
+
+* `cd LongBench/` for the normal version or `cd LongBench_legacy/` for the legacy version
 
 ### 📑 Evaluation
 
@@ -101,6 +105,8 @@ python eval.py --model meta-llama/Llama-2-7b-chat-hf
 
 ## On Needle-In-A-Haystack
 
+* `cd niah/` 
+  
 ### 📑 Evaluation
 
 ```bash
@@ -123,8 +129,8 @@ python pred.py --model_name meta-llama/Llama-3.2-3B-Instruct --max_tokens 131072
 python pred.py --model_name meta-llama/Llama-3.2-3B-Instruct --max_tokens 131072 --interval 16384 --num_tests 50
 ```
 
-* Only support `transformers >= 4.36.0` currently, i.e., no legacy version.
-* Decrease `--max_tokens` if gpu memory is insufficent.
+* Only support `transformers >= 4.36.0` currently, *i.e.*, no legacy version
+* Decrease `--max_tokens` if gpu memory is insufficent
 
 
 
